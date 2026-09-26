@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: red;
+        }
+
+        /* 그냥 적으면 태그 선택자 */
+        div {
+            color: green;
+        }
+
+        /* .이름 : 클래스 선택 */
+        .hello {
+            color: blue;
+        }
+
+        .hello2 {
+            color: violet;
+        }
+
+        /* 마지막으로 "정의된" 속성이 적용된다 */
+        .hello {
+            color: gold;
+        }
+
+        /* #이름 : id 선택 */
+        #hello-id {
+            color: brown;
+        }
+
+        .my-article {
+            color: yellow !important;
+        }
+
+        span {
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <!-- 상위 요소에서 높은 우선순위가 있어도 -->
+    <article class="my-article">
+        <!-- 하위 요소에서 재정의된다면 하위 요소의 CSS가 적용된다. -->
+        <span>과연 무슨 색일까요 ?</span>
+    </article>
+
+    <hr>
+
+    <!-- id 속성: 보통 JS 개발 시에 활용 (문서에 반드시 하나만 존재해야 한다) -->
+    <!-- CSS 는 보통 class 로 선택한다. -->
+    <div>
+        <!-- 이곳에 작성된 class 순서는 의미없다. 항상 정의기준 -->
+        <div class="hello hello2">안녕하세요</div>
+        <p id="hello-id">금기륜입니다.</p>
+        <!-- 같은 요소에 우선순위가 다른 CSS가 적용되면 -->
+        <!-- 가장 우선순위가 높은 CSS 가 적용된다 -->
+        <!-- 우선순위: 태그 < class < id < !important -->
+        <div class="hello" id="hello-id">무슨색</div>
+    </div>
+
+    <hr>
+
+    <h1>h1</h1>
+    <!-- 수평선 -->
+    <hr> 
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+
+    <p>p 태그: 문단</p>
+
+    <a href="">네이버로 이동</a>
+
+    <p>
+        <a href="">네이버</a>
+        로 이동
+    </p>
+
+    <div>div 태그</div>
+    <div>div 태그</div>
+    <span>span 태그</span>
+    <span>span 태그</span>
+
+
+</body>
+</html>
